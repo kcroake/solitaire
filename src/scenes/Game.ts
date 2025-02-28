@@ -7,6 +7,11 @@ export class Game extends Scene
 
     /*
         Cards
+
+        step1 starting small.
+
+        add sprite get it to drag with a little shake animation
+
     */
     heartAce: Phaser.GameObjects.Sprite;
 
@@ -28,9 +33,9 @@ export class Game extends Scene
 
 
         this.heartAce = this.add.sprite('0', '0', 'hearts-aces');
-        this.heartAce.setInteractive(); 
-        this.heartAce.on('pointerdown', function(){
-            console.log('bingo');
+        this.heartAce.setInteractive({ draggable: true }); 
+        this.heartAce.on('drag', function(e){
+            console.log(e); 
         })
 
 
