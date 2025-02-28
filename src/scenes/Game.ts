@@ -32,10 +32,17 @@ export class Game extends Scene
         this.background.setAlpha(0.5); 
 
 
-        this.heartAce = this.add.sprite('0', '0', 'hearts-aces');
-        this.heartAce.setInteractive({ draggable: true }); 
-        this.heartAce.on('drag', function(e){
-            console.log(e); 
+        this.heartAce = this.add.sprite('0', '0', 'hearts-aces');    
+        this.heartAce.setInteractive({draggable: true});
+    
+        this.heartAce.on('dragstart', function(pointer, dragX, dargY){
+            console.log(this); 
+        });
+    
+        this.heartAce.on('drag', function(pointer, dragX, dragY){
+            this.x = dragX;
+            this.y = dragY;
+
         })
 
 
